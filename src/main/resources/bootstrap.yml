@@ -1,0 +1,36 @@
+#spring:
+#  application:
+#    name: nacosDemo
+#
+#  cloud:
+#    nacos:
+#      config:
+#        enabled: true
+#        server-addr: 127.0.0.1:8848
+#        file-extension: yml
+#        group: DEFAULT_GROUP
+#        namespace: a730ba07-67fc-4709-8204-7f1f6a63e00c
+#        # ????yml?? ??????????
+#        extension-configs:
+#          - data-id: cloudlottery-report.yml
+#            group: DEFAULT_GROUP
+#            refresh: true
+#          - data-id: test.yml
+#            group: DEFAULT_GROUP
+#            refresh: true
+#
+#server:
+#  servlet:
+#    context-path: /nacosDemo
+#  port: 8082
+spring:
+  application:
+    name: nacosDemo
+  profiles:
+#    active: pro
+#    active: dev
+    active: @profiles.active@
+server:
+  servlet:
+    context-path: /nacosDemo
+  port: 8082

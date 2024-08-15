@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        enabled: true
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        group: DEFAULT_GROUP
+        namespace: e0e869ae-c11e-4f78-b229-60ee2e4153d2
+        # 读取多个yml配置 指定要加载的配置文件
+        extension-configs:
+          - data-id: cloudlottery-report.yml
+            group: DEFAULT_GROUP
+            refresh: true
+          - data-id: test.yml
+            group: DEFAULT_GROUP
+            refresh: true
